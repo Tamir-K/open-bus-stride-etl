@@ -6,7 +6,7 @@ from open_bus_stride_db import db
 
 UPDATE_ROUTE_GTFS_RIDE_QUERY = """
 UPDATE siri_ride AS srd
-SET route_gtfs_ride_id = grd.id
+SET gtfs_ride_id = grd.id
 FROM siri_route AS sr
 JOIN gtfs_route AS gr ON sr.line_ref = gr.line_ref
 JOIN gtfs_ride AS grd ON gr.id = grd.gtfs_route_id
