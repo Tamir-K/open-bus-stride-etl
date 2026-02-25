@@ -60,8 +60,7 @@
   docs:
     desc: |
       Runs daily, looks for matching between siri rides and gtfs rides and updates
-      the following DB fields: [[siri_ride.route_gtfs_ride_id]], 
-      [[siri_ride.journey_gtfs_ride_id]], [[siri_ride.gtfs_ride_id]].
+      the following DB fields: [[siri_ride.gtfs_ride_id]].
   tasks:
     - id: siri-update-rides-gtfs
       config:
@@ -69,7 +68,7 @@
         module: open_bus_stride_etl.siri.cli
         function: update_rides_gtfs
         kwargs:
-          input_date: {}
+          date: {}
 
 - name: stride-etl-siri-storage-backup-cleanup
   schedule_interval: "@daily"
