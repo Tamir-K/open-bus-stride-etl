@@ -69,6 +69,12 @@
         function: update_rides_gtfs
         kwargs:
           date: {}
+    - id: siri-gtfs-rides-agg
+      config:
+        type: cli
+        module: open_bus_stride_etl.siri.cli
+        function: gtfs_ride_agg
+        depends_on: siri-update-rides-gtfs
 
 - name: stride-etl-siri-storage-backup-cleanup
   schedule_interval: "@daily"
