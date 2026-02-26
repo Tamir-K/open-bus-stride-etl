@@ -23,7 +23,7 @@ def parse_date(date):
     return datetime.date.fromisoformat(date)
 
 def main(date=None):
-    date = datetime.date.today() if not date else parse_date(date)
+    date = datetime.date.today() - datetime.timedelta(days=1) if not date else parse_date(date)
     print(f"{date=}")
 
     with db.get_session() as session:
